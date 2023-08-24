@@ -170,9 +170,6 @@ def multiply_list(input_list, number):
     return output
 
 if __name__ == '__main__':
-   hello = load_audio('sounds/hello.wav')
-   write_audio(backwards(hello), 'edited_sounds/hello_reversed.wav')
-
    mystery = load_audio('sounds/mystery.wav')
    write_audio(backwards(mystery), 'edited_sounds/mystery_reversed.wav')
 
@@ -185,6 +182,9 @@ if __name__ == '__main__':
 
    car = load_audio('sounds/car.wav')
    write_audio(pan(car), 'edited_sounds/car_pan.wav')
+   
+   doorcreak = load_audio('sounds/doorcreak.wav')
+   write_audio(pan(doorcreak, False), 'edited_sounds/doorcreak_pan.wav')
 
    coffee = load_audio('sounds/coffee.wav')
    write_audio(remove_vocals(coffee),
