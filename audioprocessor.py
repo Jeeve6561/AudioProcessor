@@ -41,7 +41,7 @@ def load_audio(filename):
     return {'rate': soundrate, 'left': left, 'right': right}
 
 
-def write_wav(sound, filename):
+def write_audio(sound, filename):
     """
     Given a dictionary representing a sound, and a filename, convert the given
     sound into WAV format and save it as a file with the given filename (which
@@ -168,3 +168,24 @@ def multiply_list(input_list, number):
     for i in input_list:
         output.append(i*number)
     return output
+
+if __name__ == '__main__':
+   hello = load_audio('sounds/hello.wav')
+   write_audio(backwards(hello), 'edited_sounds/hello_reversed.wav')
+
+   mystery = load_audio('sounds/mystery.wav')
+   write_audio(backwards(mystery), 'edited_sounds/mystery_reversed.wav')
+
+   synth = load_audio('sounds/synth.wav')
+   water = load_audio('sounds/water.wav')
+   write_audio(mix(synth, water, 0.2), 'edited_sounds/mixed.wav')
+
+   chord = load_audio('sounds/chord.wav')
+   write_audio(echo(chord, 5, 0.3, 0.6), 'edited_sounds/chord_echo.wav')
+
+   car = load_audio('sounds/car.wav')
+   write_audio(pan(car), 'edited_sounds/car_pan.wav')
+
+   coffee = load_audio('sounds/coffee.wav')
+   write_audio(remove_vocals(coffee),
+               'edited_sounds/coffee_without_vocals.wav')
